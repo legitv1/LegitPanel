@@ -1,9 +1,9 @@
 const express = require("express");
-const Key = require("../models/Key");
+const key = require("../models/key");
 
 const router = express.Router();
 
-function generateKey(length = 16) {
+function generatekey(length = 16) {
 
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     let key = "";
@@ -21,9 +21,9 @@ router.post("/generate", async (req, res) => {
 
         const { duration } = req.body;
 
-        const key = generateKey();
+        const key = generatekey();
 
-        await Key.create({
+        await key.create({
             key,
             duration
         });

@@ -1,5 +1,5 @@
 const express = require("express");
-const Key = require("../models/Key");
+const key = require("../models/key");
 
 const router = express.Router();
 
@@ -9,14 +9,14 @@ router.post("/", async (req, res) => {
 
         const { key, deviceId } = req.body;
 
-        const license = await Key.findOne({ key });
+        const license = await key.findOne({ key });
 
         if(!license){
 
             return res.json({
 
                 success:false,
-                message:"Invalid Key"
+                message:"Invalid key"
 
             });
 
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
             return res.json({
 
                 success:false,
-                message:"Key already used"
+                message:"key already used"
 
             });
 
@@ -87,7 +87,7 @@ switch(license.duration){
             return res.json({
 
                 success:false,
-                message:"Key Expired"
+                message:"key Expired"
 
             });
 

@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const resellerSchema = new mongoose.Schema({
 
     username:{
