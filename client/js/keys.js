@@ -193,7 +193,7 @@ if(currentUser && currentUser.role === "reseller"){
 
     try{
 
-    const response = await fetch("http://127.0.0.1:3000/api/key/generate",{
+    const response = await fetch("https://legitpanel.onrender.com/api/key/generate",{
 
         method:"POST",
 
