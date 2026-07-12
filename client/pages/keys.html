@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Keys</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Generate Keys</h1>
+
+<p style="color:#94A3B8;margin-bottom:25px;">
+Generate premium license keys
+</p>
+
+<label>Duration</label>
+
+<select id="duration">
+
+<option>1 Hour</option>
+<option>6 Hours</option>
+<option>12 Hours</option>
+<option>1 Day</option>
+<option>3 Days</option>
+<option>7 Days</option>
+<option>15 Days</option>
+<option>30 Days</option>
+
+</select>
+
+<br><br>
+
+<label id="resellerLabel">Select Reseller</label>
+
+<select id="reseller">
+
+<option>None</option>
+
+</select>
+
+<br><br>
+
+<label>Max Devices</label>
+
+<input
+id="devices"
+type="number"
+placeholder="Enter max devices"
+value="1"
+min="0">
+
+<p style="color:#94A3B8;font-size:13px;margin-top:8px;">
+Enter <b>0</b> for Unlimited Devices.
+</p>
+
+<br>
+
+<label>Quantity</label>
+
+<input
+id="quantity"
+type="number"
+value="1"
+min="1"
+max="100">
+
+<h3 style="margin-top:20px;">Cost</h3>
+
+<p id="cost" style="color:#3B82F6;font-size:20px;font-weight:bold;">
+100 Coins
+</p>
+
+<br><br>
+
+<button id="generateBtn">
+
+Generate Key
+
+</button>
+
+<div class="welcome" style="margin-top:25px;">
+
+<h3>Generated Key</h3>
+
+<h2 id="generatedKey">
+
+No key generated
+
+</h2>
+
+</div>
+
+<div class="bottom-nav">
+
+<div id="homeBtn">
+🏠
+</div>
+
+<div class="active">
+🔑
+</div>
+
+<div id="resellerBtn">
+👥
+</div>
+
+<div id="settingsBtn">
+⚙
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/keys.js"></script>
+<script src="../js/navigation.js"></script>
+
+</body>
+</html>

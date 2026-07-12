@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generate Keys</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Generate Keys</h1>
+
+<p style="color:#94A3B8;margin-bottom:25px;">
+Generate your premium keys
+</p>
+
+<label>Duration</label>
+
+<select id="duration">
+
+<option>1 Hour</option>
+<option>6 Hours</option>
+<option>12 Hours</option>
+<option>1 Day</option>
+<option>3 Days</option>
+<option>7 Days</option>
+<option>15 Days</option>
+<option>30 Days</option>
+
+</select>
+
+<br><br>
+
+<label>Max Devices</label>
+
+<input
+id="devices"
+type="number"
+placeholder="1">
+
+<label>Quantity</label>
+
+<input
+id="quantity"
+type="number"
+value="1"
+min="1">
+
+<p id="cost"></p>
+
+<button id="generateBtn">
+
+Generate Keys
+
+</button>
+
+<div id="generatedKey" style="margin-top:20px;"></div>
+
+</div>
+
+<script src="../js/resellerKeys.js"></script>
+
+</body>
+
+</html>

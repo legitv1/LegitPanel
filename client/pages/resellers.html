@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resellers</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Resellers</h1>
+
+<p style="color:#94A3B8;margin-bottom:20px;">
+Create and manage reseller accounts
+</p>
+
+<input id="username" type="text" placeholder="Username">
+
+<input id="password" type="password" placeholder="Password">
+
+<input id="coins" type="number" placeholder="Coins">
+
+<button id="createBtn">Create Reseller</button>
+
+<div class="welcome" style="margin-top:25px;">
+
+<h2>Reseller List</h2>
+
+<div id="list">
+
+<p style="color:#94A3B8;">
+No resellers yet.
+</p>
+
+</div>
+
+</div>
+
+<div class="bottom-nav">
+
+<div onclick="window.location.href='dashboard.html'">🏠</div>
+
+<div onclick="window.location.href='keys.html'">🔑</div>
+
+<div class="active">👥</div>
+
+<div onclick="window.location.href='settings.html'">⚙</div>
+
+</div>
+
+</div>
+
+<script src="../js/resellers.js"></script>
+
+</body>
+
+</html>

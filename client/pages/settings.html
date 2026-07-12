@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Settings</h1>
+
+<p style="color:#94A3B8;margin-bottom:25px;">
+Customize your panel
+</p>
+
+<label>Panel Name</label>
+
+<input
+id="panelName"
+type="text"
+placeholder="Legit Premium Panel">
+
+<br><br>
+
+<label>Key Brand</label>
+
+<input
+id="keyBrand"
+type="text"
+placeholder="LEGITPANEL">
+
+<br><br>
+
+<button id="saveBtn">
+    Save Settings
+</button>
+
+<p id="successMsg" style="
+display:none;
+margin-top:15px;
+padding:12px;
+background:#16A34A;
+color:white;
+border-radius:12px;
+text-align:center;
+font-weight:600;
+">
+    ✅ Settings Saved Successfully
+</p>
+
+<br><br>
+
+<button id="logoutBtn">
+
+Logout
+
+</button>
+
+<div class="bottom-nav">
+
+<div onclick="window.location.href='dashboard.html'">🏠</div>
+
+<div onclick="window.location.href='keys.html'">🔑</div>
+
+<div onclick="window.location.href='resellers.html'">👥</div>
+
+<div class="active">⚙</div>
+
+</div>
+
+</div>
+
+<script src="../js/settings.js"></script>
+
+</body>
+
+</html>
