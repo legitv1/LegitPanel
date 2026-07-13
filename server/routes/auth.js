@@ -3,39 +3,31 @@ const Admin = require("../models/admin");
 
 const router = express.Router();
 
-router.post("/login", async (req,res)=>{
+router.post("/login", async (req, res) => {
 
-    const {username,password} = req.body;
+    const { username, password } = req.body;
 
-    try{
+    try {
 
-        const Admin = await Admin.findOne({username,password});
+        const admin = await Admin.findOne({ username, password });
 
-        if(Admin){
-
+        if (admin) {
             return res.json({
-
-                success:true,
-                role:"Admin"
-
+                success: true,
+                role: "Admin"
             });
-
         }
 
         return res.status(401).json({
-
-            success:false,
-            message:"Invalid username or password"
-
+            success: false,
+            message: "Invalid username or password"
         });
 
-    }catch(err){
+    } catch (err) {
 
         return res.status(500).json({
-
-            success:false,
-            message:"Server Error"
-
+            success: false,
+            message: "Server Error"
         });
 
     }
