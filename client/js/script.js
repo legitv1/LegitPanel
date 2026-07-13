@@ -34,7 +34,7 @@ button.onclick = async function(){
 
     try{
 
-        const response = await fetch("http://127.0.0.1:3000/api/login",{
+        const response = await fetch("https://legitpanel.onrender.com/api/login",{
 
             method:"POST",
 
@@ -42,16 +42,19 @@ button.onclick = async function(){
                 "Content-Type":"application/json"
             },
 
-            body:JSON.stringify({
+            
+            const payload = {
+    username,
+    password
+};
 
-                username,
-                password
+alert(JSON.stringify(payload));
 
-            })
+body: JSON.stringify(payload)
 
         });
 
-        const data = await response.json();
+        const data = await response.json();  alert(JSON.stringify(data));
 
         if(data.success){
 
