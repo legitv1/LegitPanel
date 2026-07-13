@@ -99,7 +99,7 @@ router.post("/", async (req, res) => {
         res.json({
 
             success: true,
-            expires: license.expiresAt
+            expiresAt: license.expiresAt
 
         });
 
