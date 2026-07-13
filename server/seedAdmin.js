@@ -1,31 +1,19 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const path = require("path");
 
-dotenv.config();
+dotenv.config({
+    path: path.join(__dirname, ".env")
+});
 
 const Admin = require("./models/admin");
 
 mongoose.connect(process.env.MONGO_URI)
-.then(async()=>{
+.then(async () => {
 
-    const exists = await Admin.findOne({username:"Legit"});
+    const admin = await Admin.findOne({ username: "Legit" });
 
-    if(!exists){
-
-        await Admin.create({
-
-            username:"Legit",
-            password:"123456"
-
-        });
-
-        console.log("✅ Admin Created");
-
-    }else{
-
-        console.log("ℹ️ Admin Already Exists");
-
-    }
+    console.log(admin);
 
     process.exit();
 

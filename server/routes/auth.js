@@ -4,13 +4,23 @@ const Admin = require("../models/admin");
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
+
+    console.log("========== LOGIN REQUEST ==========");
+    console.log("BODY:", req.body);
+
     try {
+
         const { username, password } = req.body;
+
+        console.log("USERNAME:", username);
+        console.log("PASSWORD:", password);
 
         const admin = await Admin.findOne({
             username,
             password
         });
+
+        console.log("FOUND:", admin);
 
         if (!admin) {
             return res.status(401).json({
@@ -24,15 +34,17 @@ router.post("/login", async (req, res) => {
             role: "Admin"
         });
 
-    } 
-    catch (err) {
-    console.error(err);
+    } catch (err) {
 
-    return res.status(500).json({
-        success: false,
-        message: err.message
-    });
-}
+        console.error("LOGIN ERROR:", err);
+
+        return res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
 });
 
 module.exports = router;
