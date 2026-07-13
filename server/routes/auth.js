@@ -14,6 +14,8 @@ router.post("/login", async (req, res) => {
 
         console.log("USERNAME:", username);
         console.log("PASSWORD:", password);
+        
+        console.log(await Admin.find({}));
 
         const admin = await Admin.findOne({
             username,
