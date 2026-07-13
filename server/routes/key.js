@@ -1,18 +1,18 @@
 const express = require("express");
-const key = require("../models/key");
+const Key = require("../models/key");
 
 const router = express.Router();
 
-function generatekey(length = 16) {
+function generateKey(length = 16) {
 
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    let key = "";
+    let generatedKey = "";
 
     for (let i = 0; i < length; i++) {
-        key += chars.charAt(Math.floor(Math.random() * chars.length));
+        generatedKey += chars.charAt(Math.floor(Math.random() * chars.length));
     }
 
-    return key.match(/.{1,4}/g).join("-");
+    return generatedKey.match(/.{1,4}/g).join("-");
 }
 
 router.post("/generate", async (req, res) => {
@@ -21,16 +21,16 @@ router.post("/generate", async (req, res) => {
 
         const { duration } = req.body;
 
-        const key = generatekey();
+        const generatedKey = generateKey();
 
-        await key.create({
-            key,
+        await Key.create({
+            key: generatedKey,
             duration
         });
 
         res.json({
             success: true,
-            key
+            key: generatedKey
         });
 
     } catch (err) {

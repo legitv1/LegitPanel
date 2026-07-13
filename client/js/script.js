@@ -1,3 +1,4 @@
+/*
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 const rememberMe = localStorage.getItem("rememberMe");
 
@@ -14,6 +15,7 @@ if(currentUser && rememberMe === "true"){
     }
 
 }
+*/
 
 const button = document.querySelector("button");
 const loginMsg = document.getElementById("loginMsg");
@@ -34,27 +36,26 @@ button.onclick = async function(){
 
     try{
 
-        const response = await fetch("https://legitpanel.onrender.com/api/login",{
-
-            method:"POST",
-
-            headers:{
-                "Content-Type":"application/json"
-            },
-
-            
-            const payload = {
+        const payload = {
     username,
     password
 };
 
 alert(JSON.stringify(payload));
 
-body: JSON.stringify(payload)
+const response = await fetch("https://legitpanel.onrender.com/api/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+});
 
-        });
+const data = await response.json();
+console.log(data);
+alert("Role = " + data.role);
 
-        const data = await response.json();  alert(JSON.stringify(data));
+alert(JSON.stringify(data));
 
         if(data.success){
 

@@ -6,7 +6,7 @@ if(!currentUser){
 
 }
 
-if(currentUser.role !== "admin"){
+if(currentUser.role.toLowerCase() !== "admin"){
 
     window.location.href = "resellerDashboard.html";
 
